@@ -41,12 +41,12 @@ main,
 section {
   margin-block: 2rem;
 }
-code {
+code.element {
   font-size: 1.5rem;
 }
-code::before{
+code.element::before{
   content:"<"
 }
-code::after{
+code.element::after{
   content:">"
 }

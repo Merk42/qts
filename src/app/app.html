@@ -4,7 +4,7 @@
     <a class="secondary" href="#">Secondary</a>
   </section>
   <section>
-    <code>animated-data</code>
+    <code class="element">animated-data</code>
     <div class="even-grid small-1 large-3">
       <qts-animated-data [number]="3" [suffix]="' GW'">
         <p>Critical power capacity under customer contract</p>
@@ -16,9 +16,7 @@
         <p>Years in business with unrivaled operational maturity</p>
       </qts-animated-data>
       <qts-animated-data [number]="1800">
-        <p>
-          QTS is Powered by People, with more than 1,800 employees worldwide
-        </p>
+        <p>QTS is Powered by People, with more than 1,800 employees worldwide</p>
       </qts-animated-data>
       <qts-animated-data [number]="90">
         <p>Rolling 12-month Net Promoter Score</p>
@@ -27,9 +25,13 @@
         <p>Charitable organizations supported</p>
       </qts-animated-data>
     </div>
+    <details>
+      <summary>code example for animated-data</summary>
+      <pre><code [highlight]="animatedDataExample" language="html"></code></pre>
+    </details>
   </section>
     <section>
-    <code>carousel</code>
+    <code class="element">carousel</code>
     <qts-carousel [config]="carouselconfig">
       <div heading>
         <h2>Resources</h2>
@@ -56,7 +58,7 @@
           <p>As the backbone of today's economy, our impact extends beyond simply building data centers. We aim to support people and create real change in the communities we serve. </p>
         </qts-card>
       </qts-carousel-content>
-            <qts-carousel-content>
+      <qts-carousel-content>
         <qts-card [date]="'2024-06-11'" [tags]="['video']">
           <h3>Closing the Digital Divide: QTS and Quilt</h3>
           <img src="qts_chicago_ashland_avenue_expansion.webp"/>
@@ -78,9 +80,13 @@
         </qts-card>
       </qts-carousel-content>
     </qts-carousel>
+    <details>
+       <summary>code example for carousel (items duplicated to show carousel functionality)</summary>
+      <pre><code [highlight]="carouselExample" language="html"></code></pre>
+    </details>
   </section>
     <section>
-    <code>animated-box</code>
+    <code class="element">animated-box</code>
     <div class="animated-boxes even-grid small-1 medium-3">
       <qts-animated-box
         [imgback]="'TimeBack-2.webp'"
@@ -126,6 +132,10 @@
         </p>
       </qts-animated-box>
     </div>
+    <details>
+      <summary>code example for animated-box</summary>
+      <pre><code [highlight]="animatedBoxExample" language="html"></code></pre>
+    </details>
   </section>
 </main>
 <router-outlet />

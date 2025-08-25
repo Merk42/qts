@@ -6,14 +6,135 @@ import { Card } from "./card/card";
 import { Carousel } from './carousel/carousel';
 import { CarouselContent } from './carousel/carousel-content/carousel-content';
 import { CarouselConfig } from './carousel/carousel-config';
+import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AnimatedBox, AnimatedData, Card, Carousel, CarouselContent],
+  imports: [RouterOutlet, AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, Highlight],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected title = 'qts';
   carouselconfig: CarouselConfig = new CarouselConfig({small:2.25,medium:3,large:3, xlarge:3, xxlarge:3});
+
+    animatedDataExample = `
+    <div class="even-grid small-1 large-3">
+      <qts-animated-data [number]="3" [suffix]="' GW'">
+        <p>Critical power capacity under customer contract</p>
+      </qts-animated-data>
+      <qts-animated-data [number]="75" [suffix]="'+'">
+        <p>State-of-the-art facilities operating or under development</p>
+      </qts-animated-data>
+      <qts-animated-data [number]="20">
+        <p>Years in business with unrivaled operational maturity</p>
+      </qts-animated-data>
+      <qts-animated-data [number]="1800">
+        <p>QTS is Powered by People, with more than 1,800 employees worldwide</p>
+      </qts-animated-data>
+      <qts-animated-data [number]="90">
+        <p>Rolling 12-month Net Promoter Score</p>
+      </qts-animated-data>
+      <qts-animated-data [number]="300" [suffix]="'+'">
+        <p>Charitable organizations supported</p>
+      </qts-animated-data>
+    </div>
+  `
+    carouselExample = `
+    <qts-carousel [config]="carouselconfig">
+      <div heading>
+        <h2>Resources</h2>
+        <p>QTS is the global digital infrastructure leader connecting the world’s economy with purpose. Our innovative thinkers are the go-to sources for the latest information in the data service industry.</p>
+      </div>
+      <qts-carousel-content>
+        <qts-card [date]="'2024-06-11'" [tags]="['video']">
+          <h3>Closing the Digital Divide: QTS and Quilt</h3>
+          <img src="qts_chicago_ashland_avenue_expansion.webp"/>
+          <p>We're proud to partner with QUILT, supporting their work to end the digital divide in Chicago. QUILT is a nonprofit organization in the greater Chicago area that works to connect individuals in communities to opportunities from which they have been cut off through access to the internet and digital services. </p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-03-21'" [tags]="['case study', 'data centers']">
+          <h3>Data Centers 101</h3>
+          <img src="25-195_SPI_CaseStudy-101-Thumbnail-1536x878.webp"/>
+          <p>Understanding the critical infrastructure that supports a digital future.</p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-04-29'" [tags]="['article']">
+          <h3>Transforming Waste into Warmth: QTS and WarmteStad</h3>
+          <img src="Screenshot-2025-04-29-at-1.webp"/>
+          <p>As the backbone of today's economy, our impact extends beyond simply building data centers. We aim to support people and create real change in the communities we serve. </p>
+        </qts-card>
+      </qts-carousel-content>
+            <qts-carousel-content>
+        <qts-card [date]="'2024-06-11'" [tags]="['video']">
+          <h3>Closing the Digital Divide: QTS and Quilt</h3>
+          <img src="qts_chicago_ashland_avenue_expansion.webp"/>
+          <p>We're proud to partner with QUILT, supporting their work to end the digital divide in Chicago. QUILT is a nonprofit organization in the greater Chicago area that works to connect individuals in communities to opportunities from which they have been cut off through access to the internet and digital services. </p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-03-21'" [tags]="['case study', 'data centers']">
+          <h3>Data Centers 101</h3>
+          <img src="25-195_SPI_CaseStudy-101-Thumbnail-1536x878.webp"/>
+          <p>Understanding the critical infrastructure that supports a digital future.</p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-04-29'" [tags]="['article']">
+          <h3>Transforming Waste into Warmth: QTS and WarmteStad</h3>
+          <img src="Screenshot-2025-04-29-at-1.webp"/>
+          <p>As the backbone of today's economy, our impact extends beyond simply building data centers. We aim to support people and create real change in the communities we serve. </p>
+        </qts-card>
+      </qts-carousel-content>
+    </qts-carousel>
+  `
+
+  animatedBoxExample = `
+    <div class="animated-boxes even-grid small-1 medium-3">
+      <qts-animated-box
+        [imgback]="'TimeBack-2.webp'"
+        [imgfront]="'QTS-Time.webp'"
+        [link]="'https://qtsdatacenters.com/community-engagement/'"
+      >
+        <h3>Time</h3>
+        <p class="front">
+          We donate our time by giving back to local communities through our
+          employee volunteerism programs.
+        </p>
+        <p class="back">
+          Each QTS employee is offered company-wide and site-based volunteer
+          opportunities year-round.
+        </p>
+      </qts-animated-box>
+      <qts-animated-box
+        [imgback]="'TalentBack-2.webp'"
+        [imgfront]="'QTS-Talent.webp'"
+        [link]="'https://qtsdatacenters.com/community-engagement/'"
+      >
+        <h3>Talent</h3>
+        <p class="front">
+          We leverage our talents to help advance nonprofits in our local
+          communities.
+        </p>
+        <p class="back">
+          We expand our community engagement partnerships and forge deep
+          relationships with a number of nonprofits to advance these
+          organizations forward in real estate and tech services.
+        </p>
+      </qts-animated-box>
+      <qts-animated-box
+        [imgback]="'resourcesBack.webp'"
+        [imgfront]="'64d567c3010fc.image_2-1.jpg'"
+        [link]="'https://qtsdatacenters.com/community-engagement/'"
+      >
+        <h3>Resources</h3>
+        <p class="front">contributions are a part of our fabric.</p>
+        <p class="back">
+          Through our success-based giving and charitable contributions we give
+          to nonprofit organizations.
+        </p>
+      </qts-animated-box>
+    </div>`
 }
