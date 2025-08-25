@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --e-global-color-primary: #000000;
+    --e-global-color-secondary: #CC2031;
+    --e-global-color-text: #4D4D4F;
+    --e-global-color-accent: #98989A;
+    --e-global-color-3b43d11: #CC2031;
+    --e-global-color-728b614: #000000;
+    --e-global-color-a85a07c: #4D4D4F;
+    --e-global-color-0e0305a: #98989A;
+    --e-global-color-6811fd9: #C8C8C8;
+    --e-global-color-bc965fb: #FAC8CA;
+    --e-global-color-8371eaa: #AA182C;
+    --e-global-color-f095139: #79242F;
+    --e-global-color-02f346e: #27377A;
+    --e-global-color-f2d0a80: #141C3E;
+    --e-global-color-f935b21: #D6DAEB;
+    --e-global-color-93ce9c1: #EAEDF5;
+    --e-global-color-efd592e: #FFFFFF;
+
+
+    --border-radius:24px;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    font-display: auto;
+    src: url('/TestFoundersGrotesk-Regular.otf') format('otf');
+}
+@font-face {
+    font-family: 'Cera Pro';
+    font-display: auto;
+    src: url('/Fontspring-DEMO-cerapro-regular.otf') format('otf');
+}
+body {
+  font-family: "Founders Grotesk", Sans-serif;
+}
+a{
+  background-color: var( --e-global-color-secondary );
+  color:#FFF;
+  border-radius: 50px;
+  font-size: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var( --e-global-color-secondary );
+  padding:8px 24px 8px 24px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all .3s
+}
+a:hover{
+  background-color: var( --e-global-color-8371eaa );
+}
+a.secondary {
+  background-color:#FFF;
+  color:var(--e-global-color-primary);
+  border-color: var(--e-global-color-6811fd9);
+}
+a.secondary:hover{
+  border-color: var(--e-global-color-primary);
+}

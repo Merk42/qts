@@ -1,0 +1,18 @@
+:host{
+  background-color: var( --e-global-color-93ce9c1 );
+  border-radius: var(--border-radius);
+  text-align: center;
+  display: flex;
+  padding:24px;
+  align-items:center;
+  justify-content:flex-start;
+  flex-direction: column;
+  gap:20px
+}
+:host ::ng-deep * {
+  margin: 0;
+}
+.number {
+  color:var( --e-global-color-02f346e );
+  font-size: 70px;
+}

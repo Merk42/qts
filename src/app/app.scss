@@ -1,0 +1,52 @@
+main,
+.animated-boxes {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.even-grid {
+  display: grid;
+  gap:1.25rem;
+  --_columns:1;
+  grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+}
+.even-grid.small-2 {
+  --_columns:2;
+}
+.even-grid.small-3 {
+  --_columns:2;
+}
+@media screen and (min-width:769px) {
+  .even-grid.medium-1 {
+    --_columns:1;
+  }
+  .even-grid.medium-2 {
+    --_columns:2;
+  }
+  .even-grid.medium-3 {
+    --_columns:3;
+  }
+}
+@media screen and (min-width:1025px) {
+  .even-grid.large-1 {
+    --_columns:1;
+  }
+  .even-grid.large-2 {
+    --_columns:2;
+  }
+  .even-grid.large-3 {
+    --_columns:3;
+  }
+}
+section {
+  margin-block: 2rem;
+}
+code {
+  font-size: 1.5rem;
+}
+code::before{
+  content:"<"
+}
+code::after{
+  content:">"
+}
