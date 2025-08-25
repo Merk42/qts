@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AnimatedBox } from './animated-box/animated-box';
 import { AnimatedData } from './animated-data/animated-data';
 import { Card } from "./card/card";
 import { Carousel } from './carousel/carousel';
@@ -8,7 +9,7 @@ import { CarouselConfig } from './carousel/carousel-config';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AnimatedData, Card, Carousel, CarouselContent],
+  imports: [RouterOutlet, AnimatedBox, AnimatedData, Card, Carousel, CarouselContent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

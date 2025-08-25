@@ -1,1 +1,10 @@
-<p>animated-box works!</p>
+<button (click)="isOpen.set(!isOpen())" aria-label="toggle"></button>
+<div class="front" [class.hide]="isOpen()">
+  <ng-content select="h3"></ng-content>
+  <ng-content select="p.front"></ng-content>
+</div>
+<div class="back" [style.background-image]="imgback()">
+  <div aria-hidden="true"><ng-content select="h3"></ng-content></div>
+  <ng-content select="p.back"></ng-content>
+  <a [href]="link()">Learn more </a>
+</div>

@@ -79,5 +79,53 @@
       </qts-carousel-content>
     </qts-carousel>
   </section>
+    <section>
+    <code>animated-box</code>
+    <div class="animated-boxes even-grid small-1 medium-3">
+      <qts-animated-box
+        [imgback]="'TimeBack-2.webp'"
+        [imgfront]="'QTS-Time.webp'"
+        [link]="'https://qtsdatacenters.com/community-engagement/'"
+      >
+        <h3>Time</h3>
+        <p class="front">
+          We donate our time by giving back to local communities through our
+          employee volunteerism programs.
+        </p>
+        <p class="back">
+          Each QTS employee is offered company-wide and site-based volunteer
+          opportunities year-round.
+        </p>
+      </qts-animated-box>
+      <qts-animated-box
+        [imgback]="'TalentBack-2.webp'"
+        [imgfront]="'QTS-Talent.webp'"
+        [link]="'https://qtsdatacenters.com/community-engagement/'"
+      >
+        <h3>Talent</h3>
+        <p class="front">
+          We leverage our talents to help advance nonprofits in our local
+          communities.
+        </p>
+        <p class="back">
+          We expand our community engagement partnerships and forge deep
+          relationships with a number of nonprofits to advance these
+          organizations forward in real estate and tech services.
+        </p>
+      </qts-animated-box>
+      <qts-animated-box
+        [imgback]="'resourcesBack.webp'"
+        [imgfront]="'64d567c3010fc.image_2-1.jpg'"
+        [link]="'https://qtsdatacenters.com/community-engagement/'"
+      >
+        <h3>Resources</h3>
+        <p class="front">contributions are a part of our fabric.</p>
+        <p class="back">
+          Through our success-based giving and charitable contributions we give
+          to nonprofit organizations.
+        </p>
+      </qts-animated-box>
+    </div>
+  </section>
 </main>
 <router-outlet />
