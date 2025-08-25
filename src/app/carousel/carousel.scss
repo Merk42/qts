@@ -1,0 +1,185 @@
+$medium-up: 'screen and (min-width:769px)';
+$large-up: 'screen and (min-width:1025px)';
+$xlarge-up: 'screen and (min-width:1441px)';
+$xxlarge-up: 'screen and (min-width:1921px)';
+
+.carousel * {
+	box-sizing: border-box;
+
+}
+.carousel {
+	position: relative;
+	width: 100%;
+	max-width: 90rem;
+  margin:auto;
+}
+.carousel__title{
+  color:var(--pine-mid)
+}
+.carousel__buttons-and-items-container {
+	position: relative;
+}
+.carousel__footer:not(:empty){
+  margin-top:.75rem;
+}
+
+.carousel:focus { /* snapper div receives a tabindex to allow focus for keyboard arrow control */
+	outline: none;
+}
+.carousel_pane{
+	scroll-snap-type:none
+}
+// @supports (scroll-snap-type: mandatory ){
+	.carousel_pane {
+	/* IE and edge */
+		-ms-overflow-style: none;
+		/* Firefox */
+		scrollbar-width: none;
+	}
+// }
+
+.carousel_pane {
+	overflow: auto;
+	width: 100%;
+	/* keep old API for iOS older than 13, then use new API */
+	-webkit-overflow-scrolling: touch;
+	/* snap to points */
+	scroll-snap-type: mandatory;
+	scroll-snap-type: x mandatory;
+	/* x interval for snapping (100% of container width) */
+	scroll-snap-points-x: repeat(100%);
+	position: relative;
+	z-index: 0;
+}
+.carousel_pane::-webkit-scrollbar {
+	display: none;
+}
+.carousel_items {
+	display: flex;
+	flex-flow: row nowrap;
+	--numitems: var(--smallacross);
+}
+.carousel_items > *{
+	position: relative;
+	white-space: normal;
+	box-sizing: border-box;
+	flex: 1 0 auto;
+	width: 100%;
+	align-items: flex-start;
+	display: flex;
+}
+
+.carousel_items > * {
+	min-width: 0;
+	width: auto;
+	flex-basis: calc(100% / var(--numitems));
+	flex-grow: 0;
+}
+
+@media #{$medium-up} {
+	.carousel_items,
+	.carousel__button{
+		--numitems: var(--mediumacross)
+	}
+}
+@media #{$large-up} {
+	.carousel_items,
+	.carousel__button{
+		--numitems: var(--largeacross)
+	}
+}
+@media #{$xlarge-up} {
+	.carousel_items,
+	.carousel__button{
+		--numitems: var(--xlargeacross)
+	}
+}
+@media #{$xxlarge-up} {
+	.carousel_items,
+	.carousel__button{
+		--numitems: var(--xxlargeacross)
+	}
+}
+/*
+.carousel__button {
+	position: absolute;
+  top: 0;
+	margin-top: calc(100% / var(--numitems)  / 2 - .75rem);
+	transform:translateY(-50%);
+}
+
+.prev-button {
+	left: 0;
+}
+.next-button {
+	right: 0;
+}
+*/
+.carousel_items.not-enough {
+	justify-content: center
+}
+.btns{
+  display: flex;
+  gap: .5rem;
+  padding:1.5rem 0px
+}
+.carousel__button{
+  --_arrowcolor:#FFF;
+  --_thickness:2px;
+  color: #FFF;
+  background-color: var(--e-global-color-3b43d11);
+  border:1px solid var(--e-global-color-3b43d11);
+  border-radius: 100vw;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+}
+.carousel__button::after,
+.carousel__button::before{
+  content:"";
+  display: block;
+  position: absolute;
+}
+.carousel__button::before{
+  width:40%;
+  height:var(--_thickness);
+  background-color: var(--_arrowcolor);
+  left:30%;
+  transform: translateY(-50%);
+}
+.carousel__button::after{
+  border-style: solid;
+  border-width:var(--_thickness) var(--_thickness) 0 0;
+  border-color: var(--_arrowcolor);
+  width:.5rem;
+  height:.5rem;
+  rotate: 45deg;
+  right:0;
+  translate: -130% -50%;
+}
+.carousel__button.prev-button::after{
+  right:auto;
+  left:0;
+  translate: 130% -50%;
+  rotate: -135deg;
+}
+.carousel__button:disabled{
+  --_arrowcolor:#98989a;
+  background-color: #FFF;
+  border-color: #98989a;
+  cursor: not-allowed;
+}
+.carousel__header{
+  display: block
+}
+@media #{$medium-up} {
+  .carousel__header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .btns{
+    padding: 0;
+  }
+}

@@ -1,0 +1,48 @@
+:host{
+  border-radius: var(--border-radius);
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--e-global-color-6811fd9);
+}
+
+:host ::ng-deep img,
+img{
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px 20px 20px 20px
+}
+:host ::ng-deep p{
+  font-size:14px;
+  color: var(--e-global-color-text);
+}
+
+div {
+  padding-inline:24px
+}
+ul{
+  display: flex;
+  list-style-type: none;
+  margin:0;
+  padding-inline:24px;
+  padding-bottom: 24px;
+  gap: .5rem 0.25rem;
+  flex-wrap: wrap;
+}
+ul li {
+  white-space: nowrap;
+  color:#FFF;
+  background-color: var( --e-global-color-secondary );
+  border-radius: 50px;
+  font-size: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var( --e-global-color-secondary );
+  padding:5px 16px;
+  text-transform: capitalize;
+}
+ul li:last-child{
+  background-color:#FFF;
+  color:var( --e-global-color-a85a07c );
+  border-color: var(--e-global-color-6811fd9);
+}

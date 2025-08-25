@@ -1,0 +1,43 @@
+<div class="carousel"
+  role="region"
+  aria-roledescription="carousel"
+  [attr.aria-label]="title()"
+  [style.--smallacross]="config().pagination.small"
+  [style.--mediumacross]="config().pagination.medium"
+  [style.--largeacross]="config().pagination.large"
+  [style.--xlargeacross]="config().pagination.xlarge"
+  [style.--xxlargeacross]="config().pagination.xxlarge">
+  <div class="carousel__header">
+    <div>
+      <ng-content select="[heading]"></ng-content>
+    </div>
+    <div class="btns">
+      <button
+        class="carousel__button prev-button"
+        (click)="prevButton()"
+        [disabled]="prevIsDisabled"
+        aria-label="previous">
+      </button>
+      <button
+        class="carousel__button next-button"
+        (click)="nextButton()"
+        [disabled]="nextIsDisabled"
+        aria-label="next">
+      </button>
+    </div>
+  </div>
+	<div class="carousel__buttons-and-items-container">
+
+		<div class="carousel_pane" #pane>
+			<div
+        class="carousel_items"
+				[ngClass]="{'not-enough' : prevIsDisabled && nextIsDisabled}">
+				<ng-content #carouselContents></ng-content>
+			</div>
+		</div>
+
+	</div>
+  <div class="carousel__footer text-center">
+    <ng-content select="[slot=footer]"></ng-content>
+  </div>
+</div>

@@ -28,5 +28,56 @@
       </qts-animated-data>
     </div>
   </section>
+    <section>
+    <code>carousel</code>
+    <qts-carousel [config]="carouselconfig">
+      <div heading>
+        <h2>Resources</h2>
+        <p>QTS is the global digital infrastructure leader connecting the world’s economy with purpose. Our innovative thinkers are the go-to sources for the latest information in the data service industry.</p>
+      </div>
+      <qts-carousel-content>
+        <qts-card [date]="'2024-06-11'" [tags]="['video']">
+          <h3>Closing the Digital Divide: QTS and Quilt</h3>
+          <img src="qts_chicago_ashland_avenue_expansion.webp"/>
+          <p>We're proud to partner with QUILT, supporting their work to end the digital divide in Chicago. QUILT is a nonprofit organization in the greater Chicago area that works to connect individuals in communities to opportunities from which they have been cut off through access to the internet and digital services. </p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-03-21'" [tags]="['case study', 'data centers']">
+          <h3>Data Centers 101</h3>
+          <img src="25-195_SPI_CaseStudy-101-Thumbnail-1536x878.webp"/>
+          <p>Understanding the critical infrastructure that supports a digital future.</p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-04-29'" [tags]="['article']">
+          <h3>Transforming Waste into Warmth: QTS and WarmteStad</h3>
+          <img src="Screenshot-2025-04-29-at-1.webp"/>
+          <p>As the backbone of today's economy, our impact extends beyond simply building data centers. We aim to support people and create real change in the communities we serve. </p>
+        </qts-card>
+      </qts-carousel-content>
+            <qts-carousel-content>
+        <qts-card [date]="'2024-06-11'" [tags]="['video']">
+          <h3>Closing the Digital Divide: QTS and Quilt</h3>
+          <img src="qts_chicago_ashland_avenue_expansion.webp"/>
+          <p>We're proud to partner with QUILT, supporting their work to end the digital divide in Chicago. QUILT is a nonprofit organization in the greater Chicago area that works to connect individuals in communities to opportunities from which they have been cut off through access to the internet and digital services. </p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-03-21'" [tags]="['case study', 'data centers']">
+          <h3>Data Centers 101</h3>
+          <img src="25-195_SPI_CaseStudy-101-Thumbnail-1536x878.webp"/>
+          <p>Understanding the critical infrastructure that supports a digital future.</p>
+        </qts-card>
+      </qts-carousel-content>
+      <qts-carousel-content>
+        <qts-card [date]="'2025-04-29'" [tags]="['article']">
+          <h3>Transforming Waste into Warmth: QTS and WarmteStad</h3>
+          <img src="Screenshot-2025-04-29-at-1.webp"/>
+          <p>As the backbone of today's economy, our impact extends beyond simply building data centers. We aim to support people and create real change in the communities we serve. </p>
+        </qts-card>
+      </qts-carousel-content>
+    </qts-carousel>
+  </section>
 </main>
 <router-outlet />

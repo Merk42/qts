@@ -1,0 +1,11 @@
+<ng-content select="img"></ng-content>
+<div>
+<ng-content select="h3"></ng-content>
+<ng-content select="p"></ng-content>
+</div>
+<ul>
+  @for (TAG of tags();track TAG) {
+    <li>{{TAG}}</li>
+  }
+  <li>{{formattedDate()}}</li>
+</ul>
