@@ -2,7 +2,7 @@ svg {
   display: block;
   width: 1em;
   height: 1em;
-  fill: red;
+  fill: var(--e-global-color-secondary);
 }
 :host{
   font-weight: bold;
@@ -12,5 +12,10 @@ svg {
   color:#333
 }
 :host:hover{
-  color:red;
+  color:var(--e-global-color-secondary);
+}
+span {
+  width: 24px;
+  justify-content: center;
+  display: flex;
 }
