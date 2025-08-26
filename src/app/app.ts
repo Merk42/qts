@@ -11,9 +11,10 @@ import { Highlight } from 'ngx-highlightjs';
 import { Link } from './link/link';
 import { SummaryList } from "./summary-lists/summary-list/summary-list";
 import { SummaryLists } from "./summary-lists/summary-lists";
+import { ArticleSummary } from "./article-summary/article-summary";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, EvenGrid, Highlight, Link, SummaryList, SummaryLists],
+  imports: [RouterOutlet, AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, EvenGrid, Highlight, Link, SummaryList, SummaryLists, ArticleSummary],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

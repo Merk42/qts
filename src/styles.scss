@@ -62,3 +62,9 @@ a.button-link-secondary {
 a.button-link-secondary:hover{
   border-color: var(--e-global-color-primary);
 }
+b{
+  color:var(--e-global-color-secondary)
+}
+h3 {
+  font-size:clamp(1.75rem, 1.6071rem + 0.7143vw, 2.25rem)
+}
