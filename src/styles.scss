@@ -30,12 +30,14 @@
 @font-face {
     font-family: 'Cera Pro';
     font-display: auto;
-    src: url('/Fontspring-DEMO-cerapro-regular.otf') format('otf');
+    src: url('/Fontspring-DEMO-cerapro-regulfar.otf') format('otf');
 }
 body {
   font-family: "Founders Grotesk", Sans-serif;
+  color:#333;
 }
-a{
+a.button-link-primary,
+a.button-link-secondary{
   background-color: var( --e-global-color-secondary );
   color:#FFF;
   border-radius: 50px;
@@ -48,14 +50,15 @@ a{
   font-weight: 700;
   transition: all .3s
 }
-a:hover{
+a.button-link-primary:hover,
+a.button-link-secondary:hover{
   background-color: var( --e-global-color-8371eaa );
 }
-a.secondary {
+a.button-link-secondary {
   background-color:#FFF;
   color:var(--e-global-color-primary);
   border-color: var(--e-global-color-6811fd9);
 }
-a.secondary:hover{
+a.button-link-secondary:hover{
   border-color: var(--e-global-color-primary);
 }

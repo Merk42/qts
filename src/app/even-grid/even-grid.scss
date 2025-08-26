@@ -1,0 +1,34 @@
+:host {
+  display: grid;
+  gap:1.25rem;
+  --_columns:1;
+  grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+}
+:host.small-2 {
+  --_columns:2;
+}
+:host.small-3 {
+  --_columns:2;
+}
+@media screen and (min-width:769px) {
+  :host.medium-1 {
+    --_columns:1;
+  }
+  :host.medium-2 {
+    --_columns:2;
+  }
+  :host.medium-3 {
+    --_columns:3;
+  }
+}
+@media screen and (min-width:1025px) {
+  :host.large-1 {
+    --_columns:1;
+  }
+  :host.large-2 {
+    --_columns:2;
+  }
+  :host.large-3 {
+    --_columns:3;
+  }
+}

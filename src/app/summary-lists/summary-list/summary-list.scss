@@ -1,0 +1,10 @@
+.sum{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap:36px;
+}
+.sum div{
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+}

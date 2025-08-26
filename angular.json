@@ -27,8 +27,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "../node_modules/highlight.js/styles/github.css"
+              "src/styles.scss"
             ]
           },
           "configurations": {
@@ -82,8 +81,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "../node_modules/highlight.js/styles/github.css"
+              "src/styles.scss"
             ]
           }
         }
