@@ -12,9 +12,16 @@ export class AnimatedData implements OnInit{
   readonly number = input.required<number>();
   readonly prefix = input<string>('');
   readonly suffix = input<string>('');
+  readonly format = input<string>()
   animatedCount = signal<number>(0);
   animatedDisplay = computed(() => {
-    return `${this.prefix()}${new Intl.NumberFormat().format(this.animatedCount())}${this.suffix()}`
+    if (this.format() === ',') {
+      return `${this.prefix()}${new Intl.NumberFormat().format(this.animatedCount())}${this.suffix()}`
+    }
+    if (this.format() === '$') {
+      return `${this.prefix()}${new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(this.animatedCount())}${this.suffix()}`
+    }
+    return `${this.prefix()}${this.animatedCount()}${this.suffix()}`
   })
 
   ngOnInit() {

@@ -33,7 +33,7 @@ export class App {
       <qts-animated-data [number]="20">
         <p>Years in business with unrivaled operational maturity</p>
       </qts-animated-data>
-      <qts-animated-data [number]="1800">
+      <qts-animated-data [number]="1800" [format]="','">
         <p>QTS is Powered by People, with more than 1,800 employees worldwide</p>
       </qts-animated-data>
       <qts-animated-data [number]="90">
