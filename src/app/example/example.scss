@@ -1,0 +1,27 @@
+h2.element {
+  font-size: 1.5rem;
+  margin-bottom:1rem;
+}
+.element {
+  font-family: monospace;
+}
+.element::before{
+  content:"<"
+}
+.element::after{
+  content:">"
+}
+
+details {
+  border:1px solid var(--e-global-color-6811fd9);
+  margin-top:1rem;
+}
+
+details[open] summary{
+  border-bottom:1px solid var(--e-global-color-6811fd9);
+}
+
+summary {
+  cursor: pointer;
+  padding: .25rem;
+}

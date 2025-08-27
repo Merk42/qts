@@ -53,14 +53,3 @@ main{
 section {
   margin-block: 2rem;
 }
-code.element {
-  font-size: 1.5rem;
-  margin-bottom:1rem;
-  display: block;
-}
-code.element::before{
-  content:"<"
-}
-code.element::after{
-  content:">"
-}

@@ -7,14 +7,14 @@ import { Carousel } from './carousel/carousel';
 import { CarouselContent } from './carousel/carousel-content/carousel-content';
 import { CarouselConfig } from './carousel/carousel-config';
 import { EvenGrid } from './even-grid/even-grid';
-import { Highlight } from 'ngx-highlightjs';
 import { Link } from './link/link';
 import { SummaryList } from "./summary-lists/summary-list/summary-list";
 import { SummaryLists } from "./summary-lists/summary-lists";
 import { ArticleSummary } from "./article-summary/article-summary";
+import { Example } from "./example/example";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, EvenGrid, Highlight, Link, SummaryList, SummaryLists, ArticleSummary],
+  imports: [RouterOutlet, AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, EvenGrid, Link, SummaryList, SummaryLists, ArticleSummary, Example],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
