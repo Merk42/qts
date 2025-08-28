@@ -24,7 +24,13 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets",
+      {
+        "glob": "**/*",
+        "input": "src/assets/fonts",
+        "output": "/assets/fonts/"
+      }
             ],
             "styles": [
               "src/styles.scss"
@@ -78,7 +84,13 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets",
+      {
+        "glob": "**/*",
+        "input": "src/assets/fonts",
+        "output": "/assets/fonts/"
+      }
             ],
             "styles": [
               "src/styles.scss"

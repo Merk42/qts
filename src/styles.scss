@@ -73,14 +73,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 @font-face {
     font-family: 'Founders Grotesk';
-    font-display: auto;
-    src: url('/TestFoundersGrotesk-Regular.otf') format('otf');
+    src: url('/assets/fonts/TestFoundersGrotesk-Regular.otf') format("opentype");
+     font-weight: normal;
+      font-style: normal;
 }
 @font-face {
     font-family: 'Cera Pro';
-    font-display: auto;
-    src: url('/Fontspring-DEMO-cerapro-regulfar.otf') format('otf');
+    src: url('/assets/fonts/cera-pro-regular.woff') format("woff");
+     font-weight: normal;
+      font-style: normal;
 }
+
 body {
   font-family: "Founders Grotesk", Sans-serif;
   color:#333;

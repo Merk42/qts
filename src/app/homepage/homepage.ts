@@ -17,5 +17,5 @@ import { Globe } from "../globe/globe";
   styleUrl: './homepage.scss'
 })
 export class Homepage {
-  carouselconfig: CarouselConfig = new CarouselConfig({small:2.25,medium:3,large:3, xlarge:3, xxlarge:3});
+  carouselconfig: CarouselConfig = new CarouselConfig({small:1.25,medium:3,large:3, xlarge:3, xxlarge:3});
 }

@@ -1,9 +1,13 @@
 header{
-  position:sticky;
   top: 0;
   display: block;
   background-color: #FFF;
   z-index: 1;
+}
+@media screen and (min-width:1025px) {
+  header {
+    position: sticky;
+  }
 }
 footer{
   background-color: var( --e-global-color-02f346e );
