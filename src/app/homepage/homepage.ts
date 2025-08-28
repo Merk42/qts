@@ -8,10 +8,11 @@ import { CarouselContent } from '../library/carousel/carousel-content/carousel-c
 import { EvenGrid } from '../library/even-grid/even-grid';
 import { SummaryLists } from '../library/summary-lists/summary-lists';
 import { SummaryList } from '../library/summary-lists/summary-list/summary-list';
+import { Globe } from "../globe/globe";
 
 @Component({
   selector: 'qts-homepage',
-  imports: [AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, EvenGrid, SummaryList, SummaryLists],
+  imports: [AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, EvenGrid, SummaryList, SummaryLists, Globe],
   templateUrl: './homepage.html',
   styleUrl: './homepage.scss'
 })
