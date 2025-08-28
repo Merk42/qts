@@ -1,0 +1,24 @@
+section,
+hr{
+  max-width: 1440px;
+  margin-inline: auto;
+}
+section {
+  margin-bottom:80px
+}
+hr{
+  margin-block: 0 60px;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 1.8929rem + 1.7857vw, 3.5rem);
+  line-height: clamp(2.5rem, 2.1429rem + 1.7857vw, 3.75rem);
+  letter-spacing: -0.02rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+section#globe{
+  max-width: none;
+  background-color: #ebedf7;
+}

@@ -1,8 +1,33 @@
 header{
-  height:100px;
   position:sticky;
   top: 0;
   display: block;
   background-color: #FFF;
   z-index: 1;
+}
+footer{
+  background-color: var( --e-global-color-02f346e );
+  height: 100px;
+}
+header .content{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+    height:100px;
+
+}
+header ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap:40px;
+  align-items: center;
+}
+li{
+  margin:0;
+  padding:0
+}
+header a{
+  text-decoration: none;
 }

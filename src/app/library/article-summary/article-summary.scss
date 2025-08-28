@@ -24,7 +24,7 @@ div{
   }
 }
 
-::ng-deep img{
+:host ::ng-deep img{
   height: auto;
   border-radius: 20px;
 }

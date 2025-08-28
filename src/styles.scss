@@ -117,3 +117,9 @@ b{
 h3 {
   font-size:clamp(1.75rem, 1.6071rem + 0.7143vw, 2.25rem)
 }
+.midwidth{
+  --_padding:36px;
+  padding:var(--_padding);
+  width:calc(1440px + var(--_padding));
+  margin-inline: auto;
+}
