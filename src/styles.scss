@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* You can add global styles to this file, and also import other style files */
 :root{
-  --e-global-color-primary: #000000;
+    --e-global-color-primary: #000000;
     --e-global-color-secondary: #CC2031;
     --e-global-color-text: #4D4D4F;
     --e-global-color-accent: #98989A;
@@ -67,7 +67,74 @@ h1, h2, h3, h4, h5, h6 {
     --e-global-color-f935b21: #D6DAEB;
     --e-global-color-93ce9c1: #EAEDF5;
     --e-global-color-efd592e: #FFFFFF;
-
+    --e-global-typography-primary-font-family: "Founders Grotesk";
+    --e-global-typography-primary-font-weight: 600;
+    --e-global-typography-secondary-font-family: "Founders Grotesk";
+    --e-global-typography-secondary-font-weight: 400;
+    --e-global-typography-text-font-family: "Founders Grotesk";
+    --e-global-typography-text-font-size: 16px;
+    --e-global-typography-text-font-weight: 400;
+    --e-global-typography-text-font-style: normal;
+    --e-global-typography-text-line-height: 1.5rem;
+    --e-global-typography-accent-font-family: "Founders Grotesk";
+    --e-global-typography-accent-font-weight: 500;
+    --e-global-typography-5fb8c18-font-family: "Founders Grotesk";
+    --e-global-typography-5fb8c18-font-size: clamp(2.25rem, 1.8929rem + 1.7857vw, 3.5rem);
+    --e-global-typography-5fb8c18-font-weight: 500;
+    --e-global-typography-5fb8c18-line-height: clamp(2.5rem, 2.1429rem + 1.7857vw, 3.75rem);
+    --e-global-typography-5fb8c18-letter-spacing: -0.02rem;
+    --e-global-typography-74042a2-font-family: "Founders Grotesk";
+    --e-global-typography-74042a2-font-size: clamp(2rem, 1.7143rem + 1.4286vw, 3rem);
+    --e-global-typography-74042a2-font-weight: 500;
+    --e-global-typography-74042a2-line-height: clamp(2rem, 1.7143rem + 1.4286vw, 3rem);
+    --e-global-typography-74042a2-letter-spacing: -0.02rem;
+    --e-global-typography-b524b30-font-family: "Founders Grotesk";
+    --e-global-typography-b524b30-font-size: clamp(1.75rem, 1.6071rem + 0.7143vw, 2.25rem);
+    --e-global-typography-b524b30-font-weight: 500;
+    --e-global-typography-b524b30-line-height: font-size: clamp(2.25rem, 2.0714rem + 0.8929vw, 2.875rem);
+    --e-global-typography-b524b30-letter-spacing: -0.02rem;
+    --e-global-typography-fa73187-font-family: "Founders Grotesk";
+    --e-global-typography-fa73187-font-size: clamp(1.5rem, 1.4643rem + 0.1786vw, 1.625rem);
+    --e-global-typography-fa73187-font-weight: 500;
+    --e-global-typography-fa73187-line-height: clamp(1.625rem, 1.5536rem + 0.3571vw, 1.875rem);
+    --e-global-typography-fa73187-letter-spacing: -0.02rem;
+    --e-global-typography-c178151-font-family: "Founders Grotesk";
+    --e-global-typography-c178151-font-size: clamp(1.125rem, 1.0536rem + 0.3571vw, 1.375rem);
+    --e-global-typography-c178151-font-weight: 500;
+    --e-global-typography-c178151-line-height: clamp(1.375rem, 1.3036rem + 0.3571vw, 1.625rem);
+    --e-global-typography-c178151-letter-spacing: -0.01rem;
+    --e-global-typography-ed169da-font-family: "Lora";
+    --e-global-typography-ed169da-font-size: 28px;
+    --e-global-typography-ed169da-font-weight: 400;
+    --e-global-typography-ed169da-line-height: 40px;
+    --e-global-typography-ed169da-letter-spacing: -0.01rem;
+    --e-global-typography-65d2769-font-family: "Founders Grotesk";
+    --e-global-typography-65d2769-font-size: 18px;
+    --e-global-typography-65d2769-font-weight: 700;
+    --e-global-typography-65d2769-line-height: 24px;
+    --e-global-typography-a92b5a5-font-family: "Founders Grotesk";
+    --e-global-typography-a92b5a5-font-size: 18px;
+    --e-global-typography-a92b5a5-font-weight: 400;
+    --e-global-typography-a92b5a5-line-height: 24px;
+    --e-global-typography-6a49e2d-font-family: "Founders Grotesk";
+    --e-global-typography-6a49e2d-font-size: 14px;
+    --e-global-typography-6a49e2d-font-weight: 400;
+    --e-global-typography-6a49e2d-line-height: 22px;
+    --e-global-typography-19f2442-font-family: "Founders Grotesk";
+    --e-global-typography-19f2442-font-size: 12px;
+    --e-global-typography-19f2442-font-weight: 400;
+    --e-global-typography-19f2442-line-height: 22px;
+    --e-global-typography-620eaa2-font-family: "Founders Grotesk";
+    --e-global-typography-620eaa2-font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+    --e-global-typography-620eaa2-font-weight: 700;
+    --e-global-typography-620eaa2-text-transform: uppercase;
+    --e-global-typography-620eaa2-line-height: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+    --e-global-typography-620eaa2-letter-spacing: 0.24rem;
+    --e-global-typography-fdc7fd0-font-family: "Founders Grotesk";
+    --e-global-typography-fdc7fd0-font-size: 16px;
+    --e-global-typography-fdc7fd0-font-weight: 700;
+    --e-global-typography-fdc7fd0-line-height: font-size: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
+    --e-global-typography-fdc7fd0-letter-spacing: -0.01rem;
 
     --border-radius:24px;
 }
