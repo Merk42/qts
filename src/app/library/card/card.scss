@@ -12,13 +12,23 @@ img{
   width: 100%;
   border-radius: 20px 20px 20px 20px
 }
+:host ::ng-deep h3 {
+  font-size: var(--e-global-typography-c178151-font-size);
+  line-height: var(--e-global-typography-c178151-line-height);
+  letter-spacing: var(--e-global-typography-c178151-letter-spacing);
+}
 :host ::ng-deep p{
-  font-size:14px;
+  font-size: var(--e-global-typography-6a49e2d-font-size);
+  line-height: var(--e-global-typography-6a49e2d-line-height);
   color: var(--e-global-color-text);
 }
 
 div {
-  padding-inline:24px
+  margin-block:24px;
+  padding-inline:24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 ul{
   display: flex;
