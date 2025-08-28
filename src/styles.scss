@@ -120,7 +120,7 @@ h3 {
 .midwidth{
   --_padding:36px;
   padding:var(--_padding);
-  width:calc(1440px + var(--_padding));
+  max-width:calc(1440px + var(--_padding));
   margin-inline: auto;
   display: block;
 }
