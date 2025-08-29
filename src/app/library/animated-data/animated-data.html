@@ -1,4 +1,4 @@
 
 
-  <p class="number">{{animatedDisplay()}}</p>
+  <p class="number" intersectionObserver [intersectionDebounce]="0" (visibilityChange)="onVisibilityChanged(0, $event)">{{animatedDisplay()}}</p>
   <ng-content select="p"></ng-content>

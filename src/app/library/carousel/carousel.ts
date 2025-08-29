@@ -19,7 +19,7 @@ import {
 import { Subject } from 'rxjs';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 
-import { WindowResizeObserver } from '../window-resize-observer';
+import { WindowResizeObserver } from '../../services/window-resize-observer';
 import { CarouselConfig } from './carousel-config';
 import { CarouselContent } from './carousel-content/carousel-content';
 

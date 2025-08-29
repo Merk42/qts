@@ -1,18 +1,19 @@
-import { Component, OnInit, computed, input, signal } from '@angular/core';
+import { Component, computed, effect, input, signal } from '@angular/core';
 import { animationFrames } from 'rxjs';
 import { map, takeWhile, endWith } from 'rxjs/operators';
-
+import { IntersectionObserverDirective } from '../../services/intersection-observer';
+import { IntersectionStatus } from '../../services/from-intersection-observer';
 @Component({
   selector: 'qts-animated-data',
-  imports: [],
+  imports: [IntersectionObserverDirective],
   templateUrl: './animated-data.html',
   styleUrl: './animated-data.scss'
 })
-export class AnimatedData implements OnInit{
+export class AnimatedData {
   readonly number = input.required<number>();
   readonly prefix = input<string>('');
   readonly suffix = input<string>('');
-  readonly format = input<string>()
+  readonly format = input<string>();
   animatedCount = signal<number>(0);
   animatedDisplay = computed(() => {
     if (this.format() === ',') {
@@ -23,19 +24,30 @@ export class AnimatedData implements OnInit{
     }
     return `${this.prefix()}${this.animatedCount()}${this.suffix()}`
   })
+  shouldAnimate = signal<boolean>(false);
 
-  ngOnInit() {
-    const startValue = 0;
-    const endValue = this.number();
-    const duration = 2000; // in milliseconds
+  constructor() {
+    effect(() => {
+      if (this.shouldAnimate()) {
+        const startValue = 0;
+        const endValue = this.number();
+        const duration = 2000; // in milliseconds
 
-    animationFrames().pipe(
-      map(({ elapsed }) => elapsed / duration),
-      takeWhile(progress => progress <= 1),
-      endWith(1),
-      map(progress => Math.round(startValue + (endValue - startValue) * progress))
-    ).subscribe(value => {
-      this.animatedCount.set(value);
-    });
+        animationFrames().pipe(
+          map(({ elapsed }) => elapsed / duration),
+          takeWhile(progress => progress <= 1),
+          endWith(1),
+          map(progress => Math.round(startValue + (endValue - startValue) * progress))
+        ).subscribe(value => {
+          this.animatedCount.set(value);
+        });
+      }
+    })
+  }
+
+  onVisibilityChanged(index: number, status: IntersectionStatus) {
+    if (status === 'Visible') {
+      this.shouldAnimate.set(true)
+    }
   }
 }
