@@ -1,0 +1,15 @@
+:host{
+  gap:1rem;
+  display: flex;
+  flex-direction: column;
+}
+h5{
+  font-size: clamp(1.125rem, 1.0536rem + 0.3571vw, 1.375rem);
+  line-height: clamp(1.375rem, 1.3036rem + 0.3571vw, 1.625rem);
+  letter-spacing: -0.01rem;
+}
+img{
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+}
