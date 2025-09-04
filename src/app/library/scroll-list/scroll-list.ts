@@ -1,13 +1,7 @@
-import { Component } from '@angular/core';
-import { ContentChild } from '@angular/core';
-import { TemplateRef } from '@angular/core';
+import { Component, ContentChild, ElementRef, TemplateRef, viewChild } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
-import { viewChild } from '@angular/core';
-import { ElementRef } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { debounceTime } from 'rxjs';
-import { map } from 'rxjs';
-import { Subject } from 'rxjs';
+import { Subject, debounceTime } from 'rxjs';
+
 @Component({
   selector: 'qts-scroll-list',
   imports: [NgTemplateOutlet],
@@ -38,15 +32,11 @@ export class ScrollList {
   checkReset(scroll:number){
     const PANE = this.items().nativeElement as HTMLElement;
     // @ts-ignore
-    const WIDTH = PANE.offsetWidth;
-    console.log("W", WIDTH);
+    const TOTAL = PANE.scrollWidth;
     // @ts-ignore
     const SC = scroll;
-    console.log("SC", SC);
-
-    if (SC >= WIDTH) {
-
-      const SCROLLTO = SC % WIDTH;
+    if (SC >= TOTAL / 2) {
+      const SCROLLTO = SC - (TOTAL / 2);
       PANE.scrollLeft = SCROLLTO;
     }
   }
