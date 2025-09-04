@@ -32,11 +32,11 @@ export class ScrollList {
   checkReset(scroll:number){
     const PANE = this.items().nativeElement as HTMLElement;
     // @ts-ignore
-    const TOTAL = PANE.scrollWidth;
+    const CONTENTWIDTH = PANE.scrollWidth / 2;
     // @ts-ignore
     const SC = scroll;
-    if (SC >= TOTAL / 2) {
-      const SCROLLTO = SC - (TOTAL / 2);
+    if (SC >= CONTENTWIDTH) {
+      const SCROLLTO = SC - CONTENTWIDTH;
       PANE.scrollLeft = SCROLLTO;
     }
   }
