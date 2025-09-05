@@ -1,4 +1,4 @@
-import { Component, ContentChild, ElementRef, TemplateRef, viewChild } from '@angular/core';
+import { AfterViewInit, Component, ContentChild, ElementRef, TemplateRef, viewChild } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { Subject, debounceTime } from 'rxjs';
 
@@ -8,11 +8,9 @@ import { Subject, debounceTime } from 'rxjs';
   templateUrl: './scroll-list.html',
   styleUrl: './scroll-list.scss'
 })
-export class ScrollList {
+export class ScrollList implements AfterViewInit {
 @ContentChild(TemplateRef) template!: TemplateRef<any>;
 	readonly items = viewChild.required<ElementRef>('items');
-
-
   scrollAmount = new Subject<number>();
 
   constructor() {
@@ -32,12 +30,22 @@ export class ScrollList {
   checkReset(scroll:number){
     const PANE = this.items().nativeElement as HTMLElement;
     // @ts-ignore
-    const CONTENTWIDTH = PANE.scrollWidth / 2;
+    const CONTENTWIDTH = PANE.scrollWidth / 3;
     // @ts-ignore
     const SC = scroll;
-    if (SC >= CONTENTWIDTH) {
-      const SCROLLTO = SC - CONTENTWIDTH;
+    if (SC >= CONTENTWIDTH * 2) {
+      const SCROLLTO = SC - CONTENTWIDTH * 2;
       PANE.scrollLeft = SCROLLTO;
     }
+    if (SC < CONTENTWIDTH) {
+      const SCROLLTO = SC + CONTENTWIDTH;
+      PANE.scrollLeft = SCROLLTO;
+    }
+  }
+
+  ngAfterViewInit(): void {
+    const PANE = this.items().nativeElement as HTMLElement;
+    const CONTENTWIDTH = PANE.scrollWidth / 3;
+    PANE.scrollLeft = CONTENTWIDTH;
   }
 }
