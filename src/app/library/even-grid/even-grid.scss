@@ -32,3 +32,15 @@
     --_columns:3;
   }
 }
+
+@media screen and (min-width:1200px) {
+  :host.xlarge-1 {
+    --_columns:1;
+  }
+  :host.xlarge-2 {
+    --_columns:2;
+  }
+  :host.xlarge-3 {
+    --_columns:3;
+  }
+}

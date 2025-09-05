@@ -8,16 +8,26 @@ section {
 hr{
   margin-block: 0 60px;
 }
-
-h1 {
-  font-size: clamp(2.25rem, 1.8929rem + 1.7857vw, 3.5rem);
-  line-height: clamp(2.5rem, 2.1429rem + 1.7857vw, 3.75rem);
-  letter-spacing: -0.02rem;
-  margin-inline: auto;
-  text-align: center;
-}
-
 section#globe{
   max-width: none;
   background-color: #ebedf7;
+}
+.grid-2-1{
+  padding-block: 60px;
+  gap:20px
+}
+
+@media screen and (min-width:1025px) {
+  .grid-2-1{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .scroll-card-body{
+    text-align: right;
+  }
+}
+.subhead {
+   color:Red;
+   font-size:13.4202px;
+   letter-spacing: 3.84px;
 }
