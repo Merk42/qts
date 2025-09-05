@@ -22,10 +22,10 @@ import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { WindowResizeObserver } from '../../services/window-resize-observer';
 import { CarouselConfig } from './carousel-config';
 import { CarouselContent } from './carousel-content/carousel-content';
-
+import { IconButton } from '../icon-button/icon-button';
 @Component({
   selector: 'qts-carousel',
-  imports: [NgClass],
+  imports: [NgClass, IconButton],
   templateUrl: './carousel.html',
   styleUrl: './carousel.scss'
 })

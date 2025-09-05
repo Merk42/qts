@@ -1,3 +1,13 @@
+<button
+  qts-icon-button
+  (click)="scroll('left')"
+  [name]="'previous'">
+</button>
+<button
+  qts-icon-button
+  (click)="scroll('right')"
+  [name]="'next'">
+</button>
 <div class="pane" #pane>
   <div class="items" (scroll)="onScroll($event)" #items>
     <template [ngTemplateOutlet]="template" ></template>
@@ -5,4 +15,3 @@
     <template [ngTemplateOutlet]="template" ></template>
   </div>
 </div>
-

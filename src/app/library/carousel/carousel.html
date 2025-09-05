@@ -12,18 +12,8 @@
       <ng-content select="[heading]"></ng-content>
     </div>
     <div class="btns">
-      <button
-        class="carousel__button prev-button"
-        (click)="prevButton()"
-        [disabled]="prevIsDisabled"
-        aria-label="previous">
-      </button>
-      <button
-        class="carousel__button next-button"
-        (click)="nextButton()"
-        [disabled]="nextIsDisabled"
-        aria-label="next">
-      </button>
+      <button qts-icon-button [name]="'previous'" [disabled]="nextIsDisabled"></button>
+      <button qts-icon-button [name]="'next'" [disabled]="prevIsDisabled"></button>
     </div>
   </div>
 	<div class="carousel__buttons-and-items-container">
@@ -41,3 +31,4 @@
     <ng-content select="[slot=footer]"></ng-content>
   </div>
 </div>
+

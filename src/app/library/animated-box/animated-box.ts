@@ -1,8 +1,9 @@
 import { Component, computed, input, signal } from '@angular/core';
+import { IconButton } from "../icon-button/icon-button";
 
 @Component({
   selector: 'qts-animated-box',
-  imports: [],
+  imports: [IconButton],
   templateUrl: './animated-box.html',
   styleUrl: './animated-box.scss',
    host: {

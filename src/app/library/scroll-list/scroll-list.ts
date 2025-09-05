@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ContentChild, ElementRef, TemplateRef, viewChild } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { Subject, debounceTime } from 'rxjs';
+import { IconButton } from "../icon-button/icon-button";
 
 @Component({
   selector: 'qts-scroll-list',
-  imports: [NgTemplateOutlet],
+  imports: [NgTemplateOutlet, IconButton],
   templateUrl: './scroll-list.html',
   styleUrl: './scroll-list.scss'
 })
@@ -47,5 +48,20 @@ export class ScrollList implements AfterViewInit {
     const PANE = this.items().nativeElement as HTMLElement;
     const CONTENTWIDTH = PANE.scrollWidth / 3;
     PANE.scrollLeft = CONTENTWIDTH;
+  }
+
+  scroll(direction:'left'|'right') {
+    const PANE = this.items().nativeElement as HTMLElement;
+    const ITEMWIDTH = (PANE.firstChild?.nextSibling as HTMLElement).offsetWidth
+    let newPosition = PANE.scrollLeft;
+    if (direction === 'left') {
+      newPosition -= ITEMWIDTH
+    } else {
+      newPosition += ITEMWIDTH
+    }
+    PANE.scrollTo({
+      left: newPosition,
+      behavior: 'smooth'
+    });
   }
 }

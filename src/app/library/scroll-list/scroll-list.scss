@@ -1,7 +1,8 @@
+/*
 :host{
   display: flex;
 }
-
+*/
 .pane {
   --smallacross: 2.25
 }
@@ -18,15 +19,7 @@
 .pane {
 	/* overflow: auto; */
 	width: 100%;
-	/* keep old API for iOS older than 13, then use new API */
-	-webkit-overflow-scrolling: touch;
-	/* snap to points */
-	scroll-snap-type: mandatory;
-	scroll-snap-type: x mandatory;
-	/* x interval for snapping (100% of container width) */
-	scroll-snap-points-x: repeat(100%);
-	position: relative;
-	z-index: 0;
+
 }
 .pane::-webkit-scrollbar {
 	display: none;
@@ -37,6 +30,12 @@
 	display: flex;
 	flex-flow: row nowrap;
 	--numitems: var(--smallacross);
+  	-webkit-overflow-scrolling: touch;
+	/* snap to points */
+	scroll-snap-type: mandatory;
+	scroll-snap-type: x mandatory;
+	/* x interval for snapping (100% of container width) */
+	scroll-snap-points-x: repeat(100%);
 }
 .items ::ng-deep qts-scroll-card{
 	position: relative;
@@ -47,6 +46,7 @@
 	align-items: flex-start;
 	display: flex;
   padding-right: 20px;
+   scroll-snap-align: start;
 }
 
 .items ::ng-deep qts-scroll-card {

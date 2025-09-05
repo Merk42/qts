@@ -123,54 +123,6 @@ $xxlarge-up: 'screen and (min-width:1921px)';
   gap: .5rem;
   padding:1.5rem 0px
 }
-.carousel__button{
-  --_arrowcolor:#FFF;
-  --_thickness:2px;
-  color: #FFF;
-  background-color: var(--e-global-color-3b43d11);
-  border:1px solid var(--e-global-color-3b43d11);
-  border-radius: 100vw;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  font-size: 1rem;
-  position: relative;
-}
-.carousel__button::after,
-.carousel__button::before{
-  content:"";
-  display: block;
-  position: absolute;
-}
-.carousel__button::before{
-  width:40%;
-  height:var(--_thickness);
-  background-color: var(--_arrowcolor);
-  left:30%;
-  transform: translateY(-50%);
-}
-.carousel__button::after{
-  border-style: solid;
-  border-width:var(--_thickness) var(--_thickness) 0 0;
-  border-color: var(--_arrowcolor);
-  width:.5rem;
-  height:.5rem;
-  rotate: 45deg;
-  right:0;
-  translate: -130% -50%;
-}
-.carousel__button.prev-button::after{
-  right:auto;
-  left:0;
-  translate: 130% -50%;
-  rotate: -135deg;
-}
-.carousel__button:disabled{
-  --_arrowcolor:#98989a;
-  background-color: #FFF;
-  border-color: #98989a;
-  cursor: not-allowed;
-}
 .carousel__header{
   display: block
 }
