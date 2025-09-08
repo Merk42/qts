@@ -27,7 +27,8 @@ import { IconButton } from '../icon-button/icon-button';
   selector: 'qts-carousel',
   imports: [NgClass, IconButton],
   templateUrl: './carousel.html',
-  styleUrl: './carousel.scss'
+  styleUrl: './carousel.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Carousel  implements OnInit {
 	private ngUnsubscribe: Subject<any> = new Subject<any>();

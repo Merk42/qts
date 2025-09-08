@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: '[qts-icon-button]',
@@ -11,7 +11,8 @@ import { Component, input } from '@angular/core';
     '[class.plus]':'name() === "plus"',
     '[class.minus]':'name() === "minus"',
     '[attr.aria-label]':'name()',
-  }
+  },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconButton {
   readonly name = input.required<string>()

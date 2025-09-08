@@ -1,10 +1,11 @@
-import { Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'qts-card',
   imports: [],
   templateUrl: './card.html',
-  styleUrl: './card.scss'
+  styleUrl: './card.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Card {
   readonly date = input.required<string>();

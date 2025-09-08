@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChild, ElementRef, TemplateRef, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, ElementRef, TemplateRef, viewChild } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { Subject, debounceTime } from 'rxjs';
 import { IconButton } from "../icon-button/icon-button";
@@ -7,7 +7,8 @@ import { IconButton } from "../icon-button/icon-button";
   selector: 'qts-scroll-list',
   imports: [NgTemplateOutlet, IconButton],
   templateUrl: './scroll-list.html',
-  styleUrl: './scroll-list.scss'
+  styleUrl: './scroll-list.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ScrollList implements AfterViewInit {
 @ContentChild(TemplateRef) template!: TemplateRef<any>;

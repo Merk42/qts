@@ -1,4 +1,4 @@
-import { Component, computed, effect, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
 import { animationFrames } from 'rxjs';
 import { map, takeWhile, endWith } from 'rxjs/operators';
 import { IntersectionObserverDirective } from '../../services/intersection-observer';
@@ -7,7 +7,8 @@ import { IntersectionStatus } from '../../services/from-intersection-observer';
   selector: 'qts-animated-data',
   imports: [IntersectionObserverDirective],
   templateUrl: './animated-data.html',
-  styleUrl: './animated-data.scss'
+  styleUrl: './animated-data.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AnimatedData {
   readonly number = input.required<number>();

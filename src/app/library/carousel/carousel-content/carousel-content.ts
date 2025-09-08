@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject } from '@angular/core';
 
 @Component({
   selector: 'qts-carousel-content',
   imports: [],
   templateUrl: './carousel-content.html',
-  styleUrl: './carousel-content.scss'
+  styleUrl: './carousel-content.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselContent {
   private elementRef = inject(ElementRef);

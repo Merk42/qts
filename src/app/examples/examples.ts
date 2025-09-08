@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AnimatedBox } from '../library/animated-box/animated-box';
 import { AnimatedData } from '../library/animated-data/animated-data';
 import { Card } from '../library/card/card';
@@ -16,7 +16,8 @@ import { Example } from './example/example';
   selector: 'qts-examples',
   imports: [AnimatedBox, AnimatedData, Card, Carousel, CarouselContent, EvenGrid, Link, SummaryList, SummaryLists, ArticleSummary, Example],
   templateUrl: './examples.html',
-  styleUrl: './examples.scss'
+  styleUrl: './examples.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Examples {
   carouselconfig: CarouselConfig = new CarouselConfig({small:2.25,medium:3,large:3, xlarge:3, xxlarge:3});

@@ -1,4 +1,4 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
 import { IconButton } from "../icon-button/icon-button";
 
 @Component({
@@ -9,7 +9,8 @@ import { IconButton } from "../icon-button/icon-button";
    host: {
     '[style.--imgfronturl]': 'imgfronturl()',
     '[style.--imgbackurl]': 'imgbackurl()'
-   }
+   },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AnimatedBox {
   isOpen = signal<boolean>(false);

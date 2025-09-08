@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { EvenGrid } from '../library/even-grid/even-grid';
 import { Link } from "../library/link/link";
 @Component({
@@ -8,7 +8,8 @@ import { Link } from "../library/link/link";
   styleUrl: './globe.scss',
   host: {
     class: 'midwidth'
-  }
+  },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Globe {
 
