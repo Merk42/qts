@@ -53,3 +53,16 @@
 	flex-grow: 0;
 }
 
+.buttons {
+  display: inline-flex;
+  gap:1rem;
+}
+
+@media #{breakpoints.$xlarge-up} {
+  .buttons {
+    display: none;
+  }
+  .items {
+    overflow: hidden;
+  }
+}
