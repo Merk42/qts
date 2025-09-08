@@ -1,7 +1,6 @@
 :host{
-  --_arrowcolor:#FFF;
-  --_thickness:2px;
-  color: #FFF;
+  --_iconcolor:#FFF;
+  --_iconthickness:2px;
   background-color: var(--e-global-color-3b43d11);
   border:1px solid var(--e-global-color-3b43d11);
   border-radius: 100vw;
@@ -11,25 +10,32 @@
   font-size: 1rem;
   position: relative;
 }
+:host:disabled{
+  --_iconcolor:#98989a;
+  background-color: #FFF;
+  border-color: #98989a;
+  cursor: not-allowed;
+}
 :host::after,
 :host::before{
   content:"";
   display: block;
   position: absolute;
 }
+
 :host.previous::before,
 :host.next::before{
   width:40%;
-  height:var(--_thickness);
-  background-color: var(--_arrowcolor);
+  height:var(--_iconthickness);
+  background-color: var(--_iconcolor);
   left:30%;
   transform: translateY(-50%);
 }
 :host.previous::after,
 :host.next::after{
   border-style: solid;
-  border-width:var(--_thickness) var(--_thickness) 0 0;
-  border-color: var(--_arrowcolor);
+  border-width:var(--_iconthickness) var(--_iconthickness) 0 0;
+  border-color: var(--_iconcolor);
   width:.5rem;
   height:.5rem;
   rotate: 45deg;
@@ -42,31 +48,24 @@
   translate: 130% -50%;
   rotate: -135deg;
 }
-:host:disabled{
-  --_arrowcolor:#98989a;
-  background-color: #FFF;
-  border-color: #98989a;
-  cursor: not-allowed;
-}
-
 
 :host.minus::before,
 :host.minus::after,
 :host.plus::before,
 :host.plus::after{
-  background-color: #FFF;
+  background-color: var(--_iconcolor);
   grid-column: 1 / 1;
   grid-row: 1 / 1;
 }
 :host.minus::before,
 :host.plus::before{
-  width:3px;
+  width:var(--_iconthickness);
   height: 25px;
   transition: opacity .7s cubic-bezier(0.5, 0.12, 0.46, 0.88);
 }
 :host.minus::after,
 :host.plus::after{
-  height:3px;
+  height:var(--_iconthickness);
   width: 25px;
 }
 :host.plus::before {
