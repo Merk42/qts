@@ -1,17 +1,14 @@
-/*
-:host{
-  display: flex;
-}
-*/
+@use "../../../breakpoints.scss";
+
 .pane {
   --smallacross: 2.25
 }
-@media screen and (min-width:1025px) {
+@media #{breakpoints.$large-up} {
   .pane {
     --smallacross: 3.25
   }
 }
-@media screen and (min-width:1200px) {
+@media #{breakpoints.$xlarge-up} {
   .pane {
     --smallacross: 5
   }

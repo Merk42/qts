@@ -1,3 +1,5 @@
+@use "../../../breakpoints.scss";
+
 :host{
   display: grid;
   gap:20px;
@@ -12,7 +14,7 @@ div{
   text-align: center;
   padding-inline: 60px;
 }
-@media screen and (min-width:1025px) {
+@media #{breakpoints.$large-up} {
   :host{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

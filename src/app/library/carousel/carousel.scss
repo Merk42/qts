@@ -1,7 +1,4 @@
-$medium-up: 'screen and (min-width:769px)';
-$large-up: 'screen and (min-width:1025px)';
-$xlarge-up: 'screen and (min-width:1441px)';
-$xxlarge-up: 'screen and (min-width:1921px)';
+@use "../../../breakpoints.scss";
 
 .carousel * {
 	box-sizing: border-box;
@@ -76,45 +73,25 @@ $xxlarge-up: 'screen and (min-width:1921px)';
 	flex-grow: 0;
 }
 
-@media #{$medium-up} {
+@media #{breakpoints.$medium-up} {
 	.carousel_items,
 	.carousel__button{
 		--numitems: var(--mediumacross)
 	}
 }
-@media #{$large-up} {
+@media #{breakpoints.$large-up} {
 	.carousel_items,
 	.carousel__button{
 		--numitems: var(--largeacross)
 	}
 }
-@media #{$xlarge-up} {
+@media #{breakpoints.$xlarge-up} {
 	.carousel_items,
 	.carousel__button{
 		--numitems: var(--xlargeacross)
 	}
 }
-@media #{$xxlarge-up} {
-	.carousel_items,
-	.carousel__button{
-		--numitems: var(--xxlargeacross)
-	}
-}
-/*
-.carousel__button {
-	position: absolute;
-  top: 0;
-	margin-top: calc(100% / var(--numitems)  / 2 - .75rem);
-	transform:translateY(-50%);
-}
 
-.prev-button {
-	left: 0;
-}
-.next-button {
-	right: 0;
-}
-*/
 .carousel_items.not-enough {
 	justify-content: center
 }
@@ -126,7 +103,7 @@ $xxlarge-up: 'screen and (min-width:1921px)';
 .carousel__header{
   display: block
 }
-@media #{$medium-up} {
+@media #{breakpoints.$medium-up} {
   .carousel__header{
     display: grid;
     grid-template-columns: 1fr auto;

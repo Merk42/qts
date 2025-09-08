@@ -1,3 +1,5 @@
+@use "../../breakpoints.scss";
+
 hr{
   max-width: 1440px;
   margin-inline: auto;
@@ -17,7 +19,7 @@ section#globe{
   gap:20px
 }
 
-@media screen and (min-width:1025px) {
+@media #{breakpoints.$large-up} {
   .grid-2-1{
     display: grid;
     grid-template-columns: 2fr 1fr;

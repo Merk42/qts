@@ -1,0 +1,15 @@
+$small-end: 768px;
+$medium-end: 1024px;
+$large-end: 1200px;
+
+$small-only: "(width <= #{$small-end})";
+
+$medium-down: "(width <= #{$medium-end})";
+$medium-only: "(#{$small-end} < width <= #{$medium-end})";
+$medium-up: "(#{$small-end} < width)";
+
+$large-down: "(width <= #{$large-end})";
+$large-only: "(#{$medium-end} < width <= #{$large-end})";
+$large-up: "(#{$medium-end} < width)";
+
+$xlarge-up: "(#{$large-end} < width)";

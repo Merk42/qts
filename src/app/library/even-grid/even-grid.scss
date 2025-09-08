@@ -1,3 +1,5 @@
+@use "../../../breakpoints.scss";
+
 :host {
   display: grid;
   gap:1.25rem;
@@ -10,7 +12,7 @@
 :host.small-3 {
   --_columns:2;
 }
-@media screen and (min-width:769px) {
+@media #{breakpoints.$medium-only} {
   :host.medium-1 {
     --_columns:1;
   }
@@ -21,7 +23,7 @@
     --_columns:3;
   }
 }
-@media screen and (min-width:1025px) {
+@media #{breakpoints.$large-only} {
   :host.large-1 {
     --_columns:1;
   }
@@ -33,7 +35,7 @@
   }
 }
 
-@media screen and (min-width:1200px) {
+@media #{breakpoints.$xlarge-only} {
   :host.xlarge-1 {
     --_columns:1;
   }

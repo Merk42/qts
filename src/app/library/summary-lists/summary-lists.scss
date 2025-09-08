@@ -1,3 +1,5 @@
+@use "../../../breakpoints.scss";
+
 :host{
   display: grid;
   --_across:1;
@@ -10,7 +12,7 @@
   margin-top:24px;
 }
 
-@media screen and (min-width:1025px) {
+@media #{breakpoints.$large-up} {
   :host {
     --_across:2;
     padding-left: 16%;
