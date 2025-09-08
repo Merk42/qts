@@ -12,7 +12,7 @@
 :host.small-3 {
   --_columns:2;
 }
-@media #{breakpoints.$medium-only} {
+@media #{breakpoints.$medium-up} {
   :host.medium-1 {
     --_columns:1;
   }
@@ -23,7 +23,7 @@
     --_columns:3;
   }
 }
-@media #{breakpoints.$large-only} {
+@media #{breakpoints.$large-up} {
   :host.large-1 {
     --_columns:1;
   }
@@ -35,7 +35,7 @@
   }
 }
 
-@media #{breakpoints.$xlarge-only} {
+@media #{breakpoints.$xlarge-up} {
   :host.xlarge-1 {
     --_columns:1;
   }
