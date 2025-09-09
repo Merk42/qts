@@ -12,8 +12,8 @@
       <ng-content select="[heading]"></ng-content>
     </div>
     <div class="btns">
-      <button qts-icon-button [name]="'previous'" [disabled]="nextIsDisabled"></button>
-      <button qts-icon-button [name]="'next'" [disabled]="prevIsDisabled"></button>
+      <button qts-icon-button [name]="'previous'" [disabled]="nextIsDisabled()" (click)="nextButton()"></button>
+      <button qts-icon-button [name]="'next'" [disabled]="prevIsDisabled()" (click)="prevButton()"></button>
     </div>
   </div>
 	<div class="carousel__buttons-and-items-container">
@@ -21,7 +21,7 @@
 		<div class="carousel_pane" #pane>
 			<div
         class="carousel_items"
-				[ngClass]="{'not-enough' : prevIsDisabled && nextIsDisabled}">
+				[ngClass]="{'not-enough' : prevIsDisabled() && nextIsDisabled()}">
 				<ng-content #carouselContents></ng-content>
 			</div>
 		</div>

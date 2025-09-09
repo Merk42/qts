@@ -2,19 +2,17 @@ import { NgClass, isPlatformBrowser, isPlatformServer } from '@angular/common';
 import {
   PLATFORM_ID,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   contentChildren,
   ElementRef,
-  Inject,
   input,
   OnInit,
-  QueryList,
   viewChild,
   ViewContainerRef,
   afterEveryRender,
   effect,
-  inject
+  inject,
+  signal
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
@@ -33,7 +31,6 @@ import { IconButton } from '../icon-button/icon-button';
 export class Carousel  implements OnInit {
 	private ngUnsubscribe: Subject<any> = new Subject<any>();
 	private windowResizeObserverService = inject(WindowResizeObserver);
-	private changeDetectorRef = inject(ChangeDetectorRef);
 	readonly groups = contentChildren(CarouselContent);
 	readonly id = input<String>('');
 	readonly title = input<String>('');
@@ -42,24 +39,21 @@ export class Carousel  implements OnInit {
 	readonly config = input<CarouselConfig>(new CarouselConfig());
   readonly index = input<number>(1);
 
-	currentIndex = 0;
-	prevIsDisabled: boolean = false;
-	nextIsDisabled: boolean = false;
-  isServerRendered: boolean = false;
-	isContentRendered: boolean = false;
+	currentIndex = signal<number>(0);
+	prevIsDisabled = signal<boolean>(false);
+	nextIsDisabled = signal<boolean>(false);
+  isServerRendered = signal<boolean>(false);
+	isContentRendered = signal<boolean>(false);
   platformId: Object;
-
-	/** Inserted by Angular inject() migration for backwards compatibility */
-	constructor(...args: unknown[]);
 
 	constructor() {
     const platformId = inject<Object>(PLATFORM_ID);
 
     this.platformId = platformId;
     afterEveryRender(() => {
-			if (this.groups()?.length > 0 && !this.isContentRendered) {
-				this.isContentRendered = true;
-				this.checkButtonStatus(this.currentIndex);
+			if (this.groups()?.length > 0 && !this.isContentRendered()) {
+				this.isContentRendered.set(true);
+				this.checkButtonStatus(this.currentIndex());
 			}
 		});
     effect(() =>{
@@ -69,9 +63,9 @@ export class Carousel  implements OnInit {
 
   ngOnInit(): void {
 		if (isPlatformServer(this.platformId)) {
-			this.isServerRendered = true;
+			this.isServerRendered.set(true);
 		} else {
-			this.isServerRendered = false;
+			this.isServerRendered.set(false);
 			this.windowBreakpointObserver();
 		}
 	}
@@ -80,7 +74,6 @@ export class Carousel  implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       const PANE = this.pane().nativeElement as HTMLElement;
       const ELEWIDTH = PANE.querySelectorAll('qts-carousel-content')[0].clientWidth;
-      // const WIDTH = PANE.clientWidth;
       const GAP = 0
       // need to add OR subtract, from current scroll amount
       const SCROLLTO = (ELEWIDTH + GAP) * index;
@@ -90,7 +83,7 @@ export class Carousel  implements OnInit {
       } else {
         PANE.scrollLeft = SCROLLTO;
       }
-      this.currentIndex = index;
+      this.currentIndex.set(index);
     }
 	}
 
@@ -101,7 +94,7 @@ export class Carousel  implements OnInit {
 			takeUntil(this.ngUnsubscribe))
 			.subscribe((breakpoint: string) => {
         if (breakpoint !== 'small' && this.groups()) {
-          this.checkButtonStatus(this.currentIndex);
+          this.checkButtonStatus(this.currentIndex());
         }
 			});
 	}
@@ -117,28 +110,26 @@ export class Carousel  implements OnInit {
 	}
 
 	prevButton() {
-		if (this.prevIsDisabled) {
+		if (this.prevIsDisabled()) {
 			return
 		}
-		let GOTO = this.currentIndex - Math.floor(this.numberItemsAcross());
+		let GOTO = this.currentIndex() - Math.floor(this.numberItemsAcross());
 		if (GOTO < 0) {
 			GOTO = 0;
 		}
-
 		this.checkButtonStatus(GOTO);
 		this.scrollTo(GOTO);
 	}
 
 	nextButton() {
-		if (this.nextIsDisabled) {
+		if (this.nextIsDisabled()) {
 			return
 		}
-		let GOTO = this.currentIndex + Math.floor(this.numberItemsAcross());
+		let GOTO = this.currentIndex() + Math.floor(this.numberItemsAcross());
 		// cannot have index be higher than length - number across!
 		if (GOTO > this.groups().length - Math.floor(this.numberItemsAcross())) {
 			GOTO = this.groups().length - Math.floor(this.numberItemsAcross()-1);
 		}
-		// this.trackButtonClick();
 		this.checkButtonStatus(GOTO);
 		this.scrollTo(GOTO);
 	}
@@ -146,23 +137,22 @@ export class Carousel  implements OnInit {
 	checkButtonStatus(GOTO: number) {
 		if (GOTO === 0) {
 			if (this.groups().length <= Math.floor(this.numberItemsAcross())) {
-				this.nextIsDisabled = true;
+				this.nextIsDisabled.set(true);
 			} else {
-				this.nextIsDisabled = false;
+				this.nextIsDisabled.set(false);
 			}
 		} else {
 			if (GOTO >= this.groups().length - Math.floor(this.numberItemsAcross())) { // or length - noScroll??
-				this.nextIsDisabled = true;
+				this.nextIsDisabled.set(true);
 			} else {
-				this.nextIsDisabled = false;
+				this.nextIsDisabled.set(false);
 			}
 		}
 		if (GOTO <= 0) {
-			this.prevIsDisabled = true;
+			this.prevIsDisabled.set(true);
 		} else {
-			this.prevIsDisabled = false;
+			this.prevIsDisabled.set(false);
 		}
-		this.changeDetectorRef.markForCheck();
 	}
 
 	ngOnDestroy() {
